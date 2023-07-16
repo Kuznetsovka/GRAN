@@ -1,9 +1,8 @@
-FROM openjdk:11-latest
+FROM openjdk:latest
 
-WORKDIR /app
-
-# Копирование JAR-файла в контейнер
-COPY producer/build/libs/producer-1.0-SNAPSHOT.jar producer.jar
+ARG JAR_FILE=target/producer-1.0-SNAPSHOT.jar
+WORKDIR /opt/app
+COPY ${JAR_FILE} producer.jar
 
 # Команда для запуска JAR-файла
 CMD ["java", "-jar", "producer.jar"]

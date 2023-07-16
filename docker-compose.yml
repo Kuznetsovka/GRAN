@@ -65,7 +65,7 @@ services:
   consumer:
     build:
       context: .
-      dockerfile: consumer/Dockerfile
+      dockerfile: granservice/Dockerfile
     ports:
       - 8081:8080
     links:
